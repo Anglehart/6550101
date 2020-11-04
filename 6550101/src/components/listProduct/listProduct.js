@@ -1,9 +1,14 @@
 import React from 'react';
 import Product from '../product/product';
 
-function ListProduct() {
+function ListProduct(props) {
+  const listItems = props.products.map((item) =>
+    <Product key={item.productId} product={item}/>
+  )
   return (
-    <Product />
+    <div className="products-list">
+      {listItems}
+    </div>
   )
 }
 

@@ -1,5 +1,5 @@
 body {
-  width: 1200px;
+  max-width: 1200px;
   margin: auto; 
   font-family: Arial,Helvetica,sans-serif;
   font-size: 14px;
@@ -12,7 +12,7 @@ a {
 .product-wrapper {
   border: 1px solid #e0e0e0;
   padding: 10px 10px 18px;
-  margin: 20px 0 14px;
+  margin: 8px 0;
   width: 1000px;
   float: left;
   box-sizing: border-box;
@@ -113,6 +113,7 @@ a {
   -webkit-transition: .2s;
   cursor: pointer;
   padding: 3px 0;
+  margin: 5px;
 }
 .select__pack {
   margin-left: 10px;
@@ -125,6 +126,7 @@ a {
   color: #fff;
   padding: 3px 5px;
   cursor: default;
+  margin: 5px 0;
 }
 .price__counter-wrapper {
   display: flex;
@@ -136,7 +138,6 @@ a {
   background: url(../../assets/unit--i.png);
   background-repeat: no-repeat;
   background-position: 10px center;
-  background-size: 15px 15px;
   margin-bottom: 15px;
   position: relative;
 }
@@ -230,4 +231,20 @@ a {
 }
 .price__button:hover {
   background-color: #333;
+}
+
+@media(max-width: 1000px) {
+  .product-wrapper {
+    width: 260px;
+    margin: 10px;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 4fr 2fr 3fr;
+    grid-template-areas: "product__code product__status" "product__image product__image" "product__about product__about" "product__price product__price";
+  }
+  .about__tags, .price__counter-info {
+    display: none;
+  }
 }

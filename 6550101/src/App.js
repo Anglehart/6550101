@@ -4,9 +4,8 @@ import ListProduct from './components/listProduct/listProduct';
 import products from './source/products.json';
 
 function App() {
-  console.log(products[0]);
   return (
-    <ListProduct />
+    <ListProduct products={products}/>
   );
 }
 
